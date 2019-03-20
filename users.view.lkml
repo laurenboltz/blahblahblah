@@ -23,7 +23,13 @@ view: users {
       label: "test"
       #       url: "/dashboards/152?test%20filter={{ _field._value | url_encode }}"
     }
+    link: {
+      url: "/dashboards/152?test%20filter={{ _field._value | url_encode }}"
+      label: "dashboard test"
     }
+    }
+
+
 
 
 
