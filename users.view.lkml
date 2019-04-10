@@ -13,7 +13,9 @@ view: users {
   }
 
 
-  parameter: test {}
+  parameter: test {
+    type: string
+  }
 
   dimension: city {
     type: string
@@ -24,7 +26,7 @@ view: users {
       #       url: "/dashboards/152?test%20filter={{ _field._value | url_encode }}"
     }
     link: {
-      url: "/dashboards/152?test%20filter={{ _field._value | url_encode }}"
+      url: "/dashboards/152?Test%20Filter={{ _field._name | url_encode }}"
       label: "dashboard test"
     }
     }
@@ -85,6 +87,14 @@ view: users {
 
   measure: count {
     type: count
+    html:
+    {% if value > 100 %}
+    <p style="color: black; background-color: lightblue; font-size:100%; text-align:center">{{ rendered_value }}</p>
+    {% elsif value >1000 %}
+    <p style="color: black; background-color: lightgreen; font-size:100%; text-align:center">{{ rendered_value }}</p>
+    {% else %}
+    <p style="color: black; background-color: orange; font-size:100%; text-align:center">{{ rendered_value }}</p>
+    {% endif %};;
     drill_fields: [detail*]
   }
 
