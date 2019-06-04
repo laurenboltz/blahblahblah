@@ -32,7 +32,10 @@ view: users {
     }
 
 
-
+  dimension: is_female {
+    type: yesno
+    sql: ${gender} = 'f' ;;
+  }
 
 
   dimension: country {
