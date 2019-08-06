@@ -90,14 +90,14 @@ view: users {
 
   measure: count {
     type: count
-    html:
-    {% if value > 100 %}
-    <p style="color: black; background-color: lightblue; font-size:100%; text-align:center">{{ rendered_value }}</p>
-    {% elsif value >1000 %}
-    <p style="color: black; background-color: lightgreen; font-size:100%; text-align:center">{{ rendered_value }}</p>
-    {% else %}
-    <p style="color: black; background-color: orange; font-size:100%; text-align:center">{{ rendered_value }}</p>
-    {% endif %};;
+#     html:
+#     {% if value > 100 %}
+#     <p style="color: black; background-color: lightblue; font-size:100%; text-align:center">{{ rendered_value }}</p>
+#     {% elsif value >1000 %}
+#     <p style="color: black; background-color: lightgreen; font-size:100%; text-align:center">{{ rendered_value }}</p>
+#     {% else %}
+#     <p style="color: black; background-color: orange; font-size:100%; text-align:center">{{ rendered_value }}</p>
+#     {% endif %};;
     drill_fields: [detail*]
   }
 
