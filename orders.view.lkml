@@ -26,6 +26,11 @@ view: orders {
     sql: ${TABLE}.status ;;
   }
 
+  dimension: status_w_comma_dash {
+    type: string
+    sql: CONCAT(${status}, " - ", ${status}, " ,");;
+  }
+
   dimension: user_id {
     type: number
     # hidden: yes
