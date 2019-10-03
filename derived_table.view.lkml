@@ -1,7 +1,7 @@
 view: derived_table {
   derived_table: {
   sql: SELECT
-  HOUR(NOW()) as hour
+  HOUR(NOW()) as hour,
         user_id as user_id
         , COUNT(*) as lifetime_orders
         , MAX(orders.created_at) as most_recent_purchase_at
