@@ -87,6 +87,8 @@ explore: user_data {
   }
 }
 
+explore: derived_table {}
+
 explore: users {}
 
 explore: users_nn {}
