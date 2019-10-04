@@ -88,7 +88,7 @@ explore: user_data {
 }
 
 explore: derived_table {
-  persist_for: "0 minutes"
+  persist_for: "4 hours"
 }
 
 explore: users {}
