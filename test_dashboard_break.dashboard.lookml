@@ -66,17 +66,6 @@
     col: 0
     width: 8
     height: 6
-  filters:
-  - name: Category
-    title: Category
-    type: field_filter
-    default_value: '%jean%'
-    allow_multiple_values: true
-    required: false
-    model: kevin_kevin_kevin
-    explore: order_items
-    listens_to_filters: []
-    field: products.category
 
   #     filters:
   # - name: Campaign Name
