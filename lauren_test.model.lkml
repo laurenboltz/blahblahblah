@@ -2,13 +2,14 @@ connection: "thelook"
 
 # include all the views
 include: "*.view"
+include: "*.dashboard.lookml"
 
-datagroup: lauren_test_default_datagroup {
-  # sql_trigger: SELECT MAX(id) FROM etl_log;;
-  max_cache_age: "1 hour"
-}
+# datagroup: lauren_test_default_datagroup {
+#   # sql_trigger: SELECT MAX(id) FROM etl_log;;
+#   max_cache_age: "1 hour"
+# }
 
-persist_with: lauren_test_default_datagroup
+# persist_with: lauren_test_default_datagroup
 
 explore: events {
   join: users {
@@ -84,6 +85,10 @@ explore: user_data {
     sql_on: ${user_data.user_id} = ${users.id} ;;
     relationship: many_to_one
   }
+}
+
+explore: derived_table {
+  persist_for: "4 hours"
 }
 
 explore: users {}
