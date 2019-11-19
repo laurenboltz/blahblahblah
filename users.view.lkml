@@ -92,6 +92,11 @@ view: users {
     sql: ${TABLE}.zip ;;
   }
 
+  measure: nonsense {
+    type: sum
+    sql: ${age} ;;
+  }
+
   measure: count {
     type: count
 #     html:
