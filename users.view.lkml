@@ -97,6 +97,11 @@ view: users {
     sql: ${age} ;;
   }
 
+  measure: gender_list {
+    type: list
+    list_field: gender
+  }
+
   measure: count {
     type: count
 #     html:
