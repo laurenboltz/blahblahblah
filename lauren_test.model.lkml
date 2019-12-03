@@ -12,6 +12,7 @@ datagroup: lauren_test_default_datagroup {
 persist_with: lauren_test_default_datagroup
 
 explore: events {
+  group_label: "Hi Hong"
   join: users {
     type: left_outer
     sql_on: ${events.user_id} = ${users.id} ;;
