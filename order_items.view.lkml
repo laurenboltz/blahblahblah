@@ -28,6 +28,7 @@ view: order_items {
       week,
       month,
       quarter,
+      fiscal_quarter,
       year
     ]
     sql: ${TABLE}.returned_at ;;
@@ -54,6 +55,6 @@ view: order_items {
   measure: percent_returned {
     type: number
     sql: ${count_returned}/${count} ;;
-    value_format_name: percent_1
+    value_format_name: percent_2
   }
 }

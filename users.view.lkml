@@ -81,11 +81,25 @@ view: users {
   dimension: state {
     type: string
     sql: ${TABLE}.state ;;
+    link: {
+      label: "Drill Dashboard"
+      url: "/dashboards/223?State={{ value }}&Age={{ _filters['users.age'] | url_encode }}"
+    }
   }
 
   dimension: zip {
     type: zipcode
     sql: ${TABLE}.zip ;;
+  }
+
+  measure: nonsense {
+    type: sum
+    sql: ${age} ;;
+  }
+
+  measure: gender_list {
+    type: list
+    list_field: gender
   }
 
   measure: count {
