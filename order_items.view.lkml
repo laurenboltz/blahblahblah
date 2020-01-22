@@ -43,4 +43,18 @@ view: order_items {
     type: count
     drill_fields: [id, inventory_items.id, orders.id]
   }
+
+  measure: count_returned {
+    type: count
+    filters: {
+      field: returned_date
+      value: "-NULL"
+    }
+  }
+
+  measure: percent_returned {
+    type: number
+    sql: ${count_returned}/${count} ;;
+    value_format_name: percent_2
+  }
 }
