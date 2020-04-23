@@ -16,6 +16,7 @@ view: orders {
       week,
       month,
       quarter,
+      fiscal_quarter,
       year
     ]
     sql: ${TABLE}.created_at ;;
@@ -26,13 +27,23 @@ view: orders {
     sql: ${TABLE}.status ;;
   }
 
+  dimension: status_w_comma_dash {
+    type: string
+    sql: CONCAT(${status}, " - ", ${status}, " ,");;
+  }
+
   dimension: user_id {
     type: number
     # hidden: yes
     sql: ${TABLE}.user_id ;;
   }
 
-  measure: count {
+#   measure: count {
+#     type: count
+#     drill_fields: [detail*]
+#   }
+
+  measure: count_dos {
     type: count
     drill_fields: [detail*]
   }
