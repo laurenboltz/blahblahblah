@@ -19,6 +19,8 @@ explore: events {
   }
 }
 
+explore: CAPITAL_LETTERS {}
+
 explore: hello_world {
   join: orders {
     type: left_outer
