@@ -4,6 +4,9 @@ connection: "thelook"
 include: "*.view"
 include: "*.dashboard.lookml"
 
+#test comment
+
+
 # datagroup: lauren_test_default_datagroup {
 #   # sql_trigger: SELECT MAX(id) FROM etl_log;;
 #   max_cache_age: "1 hour"
@@ -19,7 +22,6 @@ explore: events {
   }
 }
 
-explore: CAPITAL_LETTERS {}
 
 explore: hello_world {
   join: orders {
