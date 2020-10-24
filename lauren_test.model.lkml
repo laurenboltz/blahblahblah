@@ -37,7 +37,7 @@ explore: hello_world {
 }
 
 explore: inventory_items {
-  persist_with: lauren_test_default_datagroup
+  # persist_with: lauren_test_default_datagroup
   join: products {
     type: left_outer
     sql_on: ${inventory_items.product_id} = ${products.id} ;;
