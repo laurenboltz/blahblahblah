@@ -7,6 +7,7 @@ include: "*.dashboard.lookml"
 datagroup: lauren_test_default_datagroup {
 #   # sql_trigger: SELECT MAX(id) FROM etl_log;;
   max_cache_age: "12 minutes"
+  #so I can commit
 }
 
 persist_with: lauren_test_default_datagroup
