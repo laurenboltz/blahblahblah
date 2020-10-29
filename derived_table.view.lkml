@@ -1,4 +1,5 @@
 view: derived_table {
+  #hehe
   derived_table: {
   sql: SELECT
         user_id as user_id
