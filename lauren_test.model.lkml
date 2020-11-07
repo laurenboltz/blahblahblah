@@ -4,12 +4,18 @@ connection: "thelook"
 include: "*.view"
 include: "*.dashboard.lookml"
 
-# datagroup: lauren_test_default_datagroup {
+datagroup: lauren_test_default_datagroup {
 #   # sql_trigger: SELECT MAX(id) FROM etl_log;;
-#   max_cache_age: "1 hour"
-# }
+  max_cache_age: "12 minutes"
+  #so I can commit
+}
 
-# persist_with: lauren_test_default_datagroup
+access_grant: testing {
+  allowed_values: ["complete"]
+  user_attribute: multiplevalues
+}
+
+persist_with: lauren_test_default_datagroup
 
 explore: events {
   join: users {
@@ -36,6 +42,7 @@ explore: hello_world {
 }
 
 explore: inventory_items {
+  # persist_with: lauren_test_default_datagroup
   join: products {
     type: left_outer
     sql_on: ${inventory_items.product_id} = ${products.id} ;;
@@ -44,6 +51,7 @@ explore: inventory_items {
 }
 
 explore: order_items {
+  required_access_grants: [testing]
   join: inventory_items {
     type: left_outer
     sql_on: ${order_items.inventory_item_id} = ${inventory_items.id} ;;
