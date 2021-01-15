@@ -10,6 +10,11 @@ datagroup: lauren_test_default_datagroup {
   #so I can commit
 }
 
+access_grant: testing {
+  allowed_values: ["complete"]
+  user_attribute: multiplevalues
+}
+
 persist_with: lauren_test_default_datagroup
 
 explore: events {
@@ -20,7 +25,7 @@ explore: events {
   }
 }
 
-explore: CAPITAL_LETTERS {}
+# explore: CAPITAL_LETTERS {}
 
 explore: hello_world {
   join: orders {
@@ -47,6 +52,7 @@ explore: inventory_items {
 
 explore: order_items {
   hidden: yes
+  required_access_grants: [testing]
   join: inventory_items {
     type: left_outer
     sql_on: ${order_items.inventory_item_id} = ${inventory_items.id} ;;
